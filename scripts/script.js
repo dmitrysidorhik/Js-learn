@@ -12,11 +12,11 @@ user.name = "One";
 document.writeln(user.name);
 document.writeln("<br>");
 //////////////////////////////////////
-let fruit = prompt("Какой фрукт купить?", "apple"); //ввод
-let bag = {
-  [fruit]: 5, // имя свойства будет взято из переменной fruit
-};
-alert(bag.apple); // 5, если fruit="apple" //вывод
+// let fruit = prompt("Какой фрукт купить?", "apple"); //ввод
+// let bag = {
+//   [fruit]: 5, // имя свойства будет взято из переменной fruit
+// };
+// alert(bag.apple); // 5, если fruit="apple" //вывод
 document.writeln("<br>");
 //////////////////////////////////////
 let variable = {
@@ -56,7 +56,8 @@ for (let code in codes2) {
   document.writeln(code ); // 49, 41, 44, 1
 }
 document.writeln("<br>");
-/////////////////////////// 
+
+///////////////////////////////////////////////////////////// 
 ////https://learn.javascript.ru/object#tasks////
 
 /////---1---/////
@@ -93,6 +94,20 @@ const user3 = {
 document.writeln(user3.name);
 user3.name = "Pete";
 document.writeln(user3.name);
+document.writeln("<br>");
+
+/////---4---/////
+let salaries = {
+  John: 100,
+  Ann: 160,
+  Pete: 130
+}
+let sum_sol=0;
+for(let salar in salaries)
+{
+    sum_sol+=salaries[salar]
+}
+document.writeln(sum_sol);
 document.writeln("<br>");
 
 
