@@ -2,7 +2,7 @@ document.write("<h2>Заголовок h2</h2>");
 document.writeln("Hello");
 ////////////////////////////////////
 for (let i = 0; i < 10; i++) {
-    document.writeln(i);
+  document.writeln(i);
 }
 document.writeln("<br>");
 //////////////////////////////////////
@@ -14,48 +14,66 @@ document.writeln("<br>");
 //////////////////////////////////////
 let fruit = prompt("Какой фрукт купить?", "apple"); //ввод
 let bag = {
-    [fruit]: 5, // имя свойства будет взято из переменной fruit
+  [fruit]: 5, // имя свойства будет взято из переменной fruit
 };
 alert(bag.apple); // 5, если fruit="apple" //вывод
 document.writeln("<br>");
 //////////////////////////////////////
 let user2 = {
-    name: "John",
-    surname: "Smith"
+  name: "John",
+  surname: "Smith"
 }
 user2.name = "Pete";
 delete user2.name;
 /////////////////////////////////////
-let variable={
-    number: 21,
-    word: "hello",
-    logic: true
+let variable = {
+  number: 21,
+  word: "hello",
+  logic: true
 }
 document.writeln("<br>");
-for (key in variable)
-{
-    document.writeln(key);
+for (key in variable) {
+  document.writeln(key);
 }
 document.writeln("<br>");
-for (key in variable)
-{
-    document.writeln(variable[key]);
+for (key in variable) {
+  document.writeln(variable[key]);
 }
 document.writeln("<br>");
 ///////////////////////////
-
+let codes = {
+  "49": "Германия",
+  "41": "Швейцария",
+  "44": "Великобритания",
+  // ..,
+  "1": "США"
+};
+for (let code in codes) {
+  document.writeln(code ); // 
+}
+document.writeln("<br>");
+let codes2 = {
+  "+49": "Германия",
+  "+41": "Швейцария",
+  "+44": "Великобритания",
+  // ..,
+  "+1": "США"
+};
+for (let code in codes2) {
+  document.writeln(code ); // 49, 41, 44, 1
+}
 ///////////////////////////
-function Test(){
+function Test() {
   // объявляем и инициализируем свойства
-  this.x=5;
-  this.y=3;
+  this.x = 5;
+  this.y = 3;
   // объявляем методы
-  this.sum=function(){
-    return this.x+this.y;
+  this.sum = function () {
+    return this.x + this.y;
   }
   // выполняем иные конструктивные действия
   document.writeln("<br>");
-  document.writeln("Constructor: x="+this.x+", y="+this.y+", sum="+this.sum());
+  document.writeln("Constructor: x=" + this.x + ", y=" + this.y + ", sum=" + this.sum());
 }
 Test();
 /////////////////////////////
