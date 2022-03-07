@@ -110,9 +110,35 @@ for(let salar in salaries)
 document.writeln(sum_sol);
 document.writeln("<br>");
 
+/////---5---/////
+let menu = {
+    width: 200,
+    height: 300,
+    title: "My menu"
+};
+for(let men in menu)
+{
+    document.writeln(men+": ");
+    document.writeln(menu[men]);
+}
+document.writeln("<br>");
 
+multiplyNumeric();
 
+function multiplyNumeric() {
+  for (let element in menu) {
+    if (typeof menu[element] === 'number') {
+      menu[element]*=2;
+    }
+  }
+}
 
+for(let men in menu)
+{
+    document.writeln(men+": ");
+    document.writeln(menu[men]);
+}
+document.writeln("<br>");
 /////////////////////////////////////
 
 /////////////////////////////////////
