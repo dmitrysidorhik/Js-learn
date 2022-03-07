@@ -84,6 +84,19 @@ function isEmpty(obj) {
   }
   return true;
 }
+document.writeln("<br>");
+
+/////---3---/////
+const user3 = {
+  name: "John"
+};
+document.writeln(user3.name);
+user3.name = "Pete";
+document.writeln(user3.name);
+document.writeln("<br>");
+
+
+
 
 /////////////////////////////////////
 
