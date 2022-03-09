@@ -144,7 +144,7 @@ let _cont = 0;
 function Test() {
   // объявляем и инициализируем свойства
   this.x = 5;
-  this.y = 3;  
+  this.y = 3;
   // объявляем методы
   this.sum = function () {
     return this.x + this.y;
@@ -156,25 +156,11 @@ function Test() {
   document.writeln("<br>");
   document.writeln("Constructor: x=" + this.x + ", y=" + this.y + ", sum=" + this.sum() + ", cont=" + this.cont());
 }
-for (let i = 0; i < 10; i++) {
+for (let i = 0; i < 12; i++) {
   Test();
-}
+} 
+// !!! НЕ ФАКТ, ЧТО Я РЕАЛИЗОВАЛ КОРРЕКТНУЮ ПРОВЕРКУ 
 //в каждом объекте создаётся свой, отдельный метод sum. 
 //Если мы создадим сто объектов Test — получим где-то в памяти сто функций sum.
-// _cont = 0;
-// function Test2(){
-//   // объявляем и инициализируем свойства
-//   this.x=5;
-//   this.y=3;
-//   // прикручиваем методы
-//   this.sum=Test_sum;
-//   // выполняем иные конструктивные действия
-// document.writeln("Constructor: x="+this.x+", y="+this.y+", sum="+this.sum() + ", cont=" + this.cont());
-//   alert("Constructor: x="+this.x+", y="+this.y+", sum="+this.sum());
-// }
 
-// // реализуем методы
-// function Test_sum(){
-//   return this.x+this.y;
-// }
 /////////////////////////////
