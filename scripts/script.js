@@ -42,7 +42,7 @@ let codes = {
   "1": "США"
 };
 for (let code in codes) {
-  document.writeln(code ); // 
+  document.writeln(code); // 
 }
 document.writeln("<br>");
 let codes2 = {
@@ -53,7 +53,7 @@ let codes2 = {
   "+1": "США"
 };
 for (let code in codes2) {
-  document.writeln(code ); // 49, 41, 44, 1
+  document.writeln(code); // 49, 41, 44, 1
 }
 document.writeln("<br>");
 
@@ -65,11 +65,11 @@ let user2 = {
   name: "John",
   surname: "Smith"
 }
-document.writeln(user2.name); 
+document.writeln(user2.name);
 user2.name = "Pete";
-document.writeln(user2.name); 
+document.writeln(user2.name);
 delete user2.name;
-document.writeln(user2.name); 
+document.writeln(user2.name);
 document.writeln("<br>");
 
 /////---2---/////
@@ -102,24 +102,22 @@ let salaries = {
   Ann: 160,
   Pete: 130
 }
-let sum_sol=0;
-for(let salar in salaries)
-{
-    sum_sol+=salaries[salar]
+let sum_sol = 0;
+for (let salar in salaries) {
+  sum_sol += salaries[salar]
 }
 document.writeln(sum_sol);
 document.writeln("<br>");
 
 /////---5---/////
 let menu = {
-    width: 200,
-    height: 300,
-    title: "My menu"
+  width: 200,
+  height: 300,
+  title: "My menu"
 };
-for(let men in menu)
-{
-    document.writeln(men+": ");
-    document.writeln(menu[men]);
+for (let men in menu) {
+  document.writeln(men + ": ");
+  document.writeln(menu[men]);
 }
 document.writeln("<br>");
 
@@ -128,31 +126,55 @@ multiplyNumeric();
 function multiplyNumeric() {
   for (let element in menu) {
     if (typeof menu[element] === 'number') {
-      menu[element]*=2;
+      menu[element] *= 2;
     }
   }
 }
 
-for(let men in menu)
-{
-    document.writeln(men+": ");
-    document.writeln(menu[men]);
+for (let men in menu) {
+  document.writeln(men + ": ");
+  document.writeln(menu[men]);
 }
 document.writeln("<br>");
 /////////////////////////////////////
 
 /////////////////////////////////////
+//https://habr.com/ru/post/11673/
+let _cont = 0;
 function Test() {
   // объявляем и инициализируем свойства
   this.x = 5;
-  this.y = 3;
+  this.y = 3;  
   // объявляем методы
   this.sum = function () {
     return this.x + this.y;
   }
+  this.cont = function () {
+    return _cont++;
+  }
   // выполняем иные конструктивные действия
   document.writeln("<br>");
-  document.writeln("Constructor: x=" + this.x + ", y=" + this.y + ", sum=" + this.sum());
+  document.writeln("Constructor: x=" + this.x + ", y=" + this.y + ", sum=" + this.sum() + ", cont=" + this.cont());
 }
-Test();
+for (let i = 0; i < 10; i++) {
+  Test();
+}
+//в каждом объекте создаётся свой, отдельный метод sum. 
+//Если мы создадим сто объектов Test — получим где-то в памяти сто функций sum.
+// _cont = 0;
+// function Test2(){
+//   // объявляем и инициализируем свойства
+//   this.x=5;
+//   this.y=3;
+//   // прикручиваем методы
+//   this.sum=Test_sum;
+//   // выполняем иные конструктивные действия
+// document.writeln("Constructor: x="+this.x+", y="+this.y+", sum="+this.sum() + ", cont=" + this.cont());
+//   alert("Constructor: x="+this.x+", y="+this.y+", sum="+this.sum());
+// }
+
+// // реализуем методы
+// function Test_sum(){
+//   return this.x+this.y;
+// }
 /////////////////////////////
